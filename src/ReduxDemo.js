@@ -18,10 +18,10 @@ class ReduxDemo extends Component {
 
 	//Step 1 Store: reducer n state
 	const store = createStore(reducer, "NOSTUDY");
-	
+
 	//Step 3: Subscribe
 	store.subscribe(() => {
-		console.log("Store is now", store.getState());
+		// console.log("Store is now", store.getState());
 	})
 
 	//Step 4: Dispatch action
