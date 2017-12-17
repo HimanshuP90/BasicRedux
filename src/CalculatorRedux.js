@@ -6,7 +6,8 @@ class CalculatorRedux extends Component {
 
 	const initialState = {
 		result: 1,
-		lastValues: []
+		lastValues: [],
+		username: "max"
 	}
 
 	//2nd Step pass state and action in reducer
@@ -15,14 +16,17 @@ class CalculatorRedux extends Component {
 			case "ADD":
 				state = {
 					...state,
-					result: state.result + action.payload
+					result: state.result + action.payload,
+					lastValues: [...state.lastValues, action.payload]
 				};
 				break;
 			case "SUBTRACT":
 				state = {
 					...state,
-					result: state.result - action.payload
-				};				break;
+					result: state.result - action.payload,
+					lastValues: [...state.lastValues, action.payload]
+				};
+				break;
 			default:
 				break;
 		}
